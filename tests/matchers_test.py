@@ -58,12 +58,6 @@ class JsonMatcherTest(unittest.TestCase):
         captured = '{"surname": "Wazowski", "name":"Mike"}'
         self.assertTrue(matcher.matches(captured))
 
-    def test_should_match_json_string_which_has_more_items_than_suitable_json_string(self):
-        suitable = '{"name":"Mike", "surname": "Wazowski"}'
-        matcher = matchers.JsonMatcher(suitable)
-        captured = '{"surname": "Wazowski", "name":"Mike", "company": "Monsters Inc."}'
-        self.assertTrue(matcher.matches(captured))
-
     def test_should_not_match_string_which_is_not_a_valid_json_string(self):
         suitable = '{"name":"Mike", "surname": "Wazowski"}'
         matcher = matchers.JsonMatcher(suitable)
