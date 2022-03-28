@@ -60,9 +60,9 @@ class JsonMatcher:
         if captured_json is None:
             return False
 
-        captured_contains_suitable = self.__suitable_json.items() <= captured_json.items()
+        captured_deep_equal_to_suitable = self.__suitable_json == captured_json
 
-        return captured_contains_suitable
+        return captured_deep_equal_to_suitable
 
     @staticmethod
     def __try_json_loads(s: str) -> t.Optional[dict]:
