@@ -63,3 +63,9 @@ class JsonMatcherTest(unittest.TestCase):
         matcher = matchers.JsonMatcher(suitable)
         captured = 'Not a JSON string'
         self.assertFalse(matcher.matches(captured))
+
+    def test_should_match_string_which_has_nested_json(self):
+        suitable = '{"name": "Mike", "surname": "Wazowski", "passport": {"number": "7777", "series": "777"}}'
+        matcher = matchers.JsonMatcher(suitable)
+        captured = '{"surname": "Wazowski", "name": "Mike", "passport": {"series": "777", "number": "7777"}}'
+        self.assertTrue(matcher.matches(captured))
