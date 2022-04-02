@@ -8,7 +8,7 @@ from . import errors
 class ExactMatcher:
     def __init__(self, suitable: str) -> None:
         if not isinstance(suitable, str):
-            raise errors.ExactMatcherError(
+            raise errors.IncorrectSuitableError(
                 'The "suitable" must be a string.'
             )
 
@@ -21,14 +21,14 @@ class ExactMatcher:
 class RegexpMatcher:
     def __init__(self, suitable: str) -> None:
         if not isinstance(suitable, str):
-            raise errors.RegexpMatcherError(
+            raise errors.IncorrectSuitableError(
                 'The "suitable" must be a string.'
             )
 
         try:
             suitable_regexp = re.compile(suitable)
         except re.error:
-            raise errors.RegexpMatcherError(
+            raise errors.IncorrectSuitableError(
                 'The "suitable" must be a valid regexp pattern.'
             )
 
@@ -41,14 +41,14 @@ class RegexpMatcher:
 class JsonMatcher:
     def __init__(self, suitable: str) -> None:
         if not isinstance(suitable, str):
-            raise errors.JsonMatcherError(
+            raise errors.IncorrectSuitableError(
                 'The "suitable" must be a string.'
             )
 
         suitable_json = JsonMatcher.__try_json_loads(suitable)
 
         if suitable_json is None:
-            raise errors.JsonMatcherError(
+            raise errors.IncorrectSuitableError(
                 'The "suitable" must be a valid json string.'
             )
 

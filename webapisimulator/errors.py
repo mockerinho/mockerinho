@@ -1,19 +1,12 @@
 
-class WebApiSimulatorError(Exception):
+
+class Error(Exception):
     pass
 
 
-class MatcherError(WebApiSimulatorError):
+class MatcherError(Error):
     pass
 
 
-class ExactMatcherError(MatcherError):
-    pass
-
-
-class RegexpMatcherError(MatcherError):
-    pass
-
-
-class JsonMatcherError(MatcherError):
+class IncorrectSuitableError(MatcherError):
     pass
