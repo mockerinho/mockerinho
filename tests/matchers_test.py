@@ -4,9 +4,9 @@ from webapisimulator import errors, matchers
 
 
 class ExactMatcherTest(unittest.TestCase):
-    def test_should_raise_regexp_matcher_error_if_suitable_is_not_a_string(self):
+    def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
         for unsuitable in [777, None, str]:
-            with self.assertRaises(errors.ExactMatcherError):
+            with self.assertRaises(errors.IncorrectSuitableError):
                 _ = matchers.ExactMatcher(unsuitable)
 
     def test_should_match_string_which_equals_to_suitable_string(self):
@@ -23,9 +23,9 @@ class ExactMatcherTest(unittest.TestCase):
 
 
 class RegexpMatcherTest(unittest.TestCase):
-    def test_should_raise_regexp_matcher_error_if_suitable_is_not_a_string(self):
+    def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
         for unsuitable in [777, None, str]:
-            with self.assertRaises(errors.RegexpMatcherError):
+            with self.assertRaises(errors.IncorrectSuitableError):
                 _ = matchers.RegexpMatcher(unsuitable)
 
     def test_should_match_string_which_matches_suitable_regexp_pattern(self):
@@ -42,14 +42,14 @@ class RegexpMatcherTest(unittest.TestCase):
 
 
 class JsonMatcherTest(unittest.TestCase):
-    def test_should_raise_json_matcher_error_if_suitable_is_not_a_string(self):
+    def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
         for unsuitable in [777, None, str]:
-            with self.assertRaises(errors.JsonMatcherError):
+            with self.assertRaises(errors.IncorrectSuitableError):
                 _ = matchers.JsonMatcher(unsuitable)
 
-    def test_should_raise_json_matcher_error_if_suitable_is_not_a_valid_json_string(self):
+    def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_valid_json_string(self):
         suitable = 'This string is not suitable tho...'
-        with self.assertRaises(errors.JsonMatcherError):
+        with self.assertRaises(errors.IncorrectSuitableError):
             _ = matchers.JsonMatcher(suitable)
 
     def test_should_match_json_string_which_equals_to_suitable_json_string(self):
