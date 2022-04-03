@@ -3,7 +3,7 @@ import unittest
 from webapisimulator import errors, matchers
 
 
-class ExactMatcherTest(unittest.TestCase):
+class ExactMatcherTestCase(unittest.TestCase):
     def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
         for unsuitable in [777, None, str]:
             with self.assertRaises(errors.IncorrectSuitableError):
@@ -22,7 +22,7 @@ class ExactMatcherTest(unittest.TestCase):
         self.assertFalse(matcher.matches(captured))
 
 
-class RegexpMatcherTest(unittest.TestCase):
+class RegexpMatcherTestCase(unittest.TestCase):
     def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
         for unsuitable in [777, None, str]:
             with self.assertRaises(errors.IncorrectSuitableError):
@@ -41,7 +41,7 @@ class RegexpMatcherTest(unittest.TestCase):
             self.assertFalse(matcher.matches(captured))
 
 
-class JsonMatcherTest(unittest.TestCase):
+class JsonMatcherTestCase(unittest.TestCase):
     def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
         for unsuitable in [777, None, str]:
             with self.assertRaises(errors.IncorrectSuitableError):
