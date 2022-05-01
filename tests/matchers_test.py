@@ -1,6 +1,6 @@
 import unittest
 
-from webapisimulator import errors, matchers
+from mockerinho import errors, matchers
 
 
 class ExactMatcherTestCase(unittest.TestCase):

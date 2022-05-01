@@ -1,6 +1,6 @@
 import unittest
 
-from webapisimulator import utils
+from mockerinho import utils
 
 
 class UtilsTestCase(unittest.TestCase):
