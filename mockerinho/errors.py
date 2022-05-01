@@ -1,7 +1,6 @@
 
 class MockerinhoError(Exception):
     """A base class for errors used by mockerinho."""
-    pass
 
 
 class MatcherError(MockerinhoError):
