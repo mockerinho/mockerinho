@@ -10,3 +10,15 @@ class MatcherError(MockerinhoError):
 
 class IncorrectSuitableError(MatcherError):
     pass
+
+
+class ConfigFileParserError(MockerinhoError):
+    """A base class for all errors related to config file parser."""
+
+
+class IncorrectConfigFileSchemaError(ConfigFileParserError):
+    pass
+
+
+class ParsingConfigFileError(ConfigFileParserError):
+    pass

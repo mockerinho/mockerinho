@@ -1,5 +1,9 @@
 import argparse
 import os
+import sys
+
+from .config import ConfigFileParser
+from .errors import MockerinhoError
 
 
 def get_default_simulations_directory_path() -> str:
@@ -37,6 +41,19 @@ SERVER_HAS_STOPPED_MESSAGE = 'Web API Simulator server has stopped.'
 def main() -> None:
     args = parse_args()
     host, port, directory = args.host, args.port, args.directory
+
+    try:
+        configurations = []
+        for filename in os.listdir(directory):
+            absolute_path = os.path.join(directory, filename)
+            if os.path.isfile(absolute_path):
+                parsed_config = ConfigFileParser.parse(absolute_path)
+                configurations.append(parsed_config)
+
+    except MockerinhoError as err:
+        message = f'{err}\n'
+        sys.stderr.write(message)
+        exit(1)
 
     try:
         print(STARTING_SERVER_MESSAGE.format(host, port))
