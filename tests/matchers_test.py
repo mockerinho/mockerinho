@@ -4,11 +4,6 @@ from mockerinho import errors, matchers
 
 
 class ExactMatcherTestCase(unittest.TestCase):
-    def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
-        for unsuitable in [777, None, str]:
-            with self.assertRaises(errors.IncorrectSuitableError):
-                _ = matchers.ExactMatcher(unsuitable)
-
     def test_should_match_string_which_equals_to_suitable_string(self):
         suitable = 'suitable'
         matcher = matchers.ExactMatcher(suitable)
@@ -23,11 +18,6 @@ class ExactMatcherTestCase(unittest.TestCase):
 
 
 class RegexpMatcherTestCase(unittest.TestCase):
-    def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
-        for unsuitable in [777, None, str]:
-            with self.assertRaises(errors.IncorrectSuitableError):
-                _ = matchers.RegexpMatcher(unsuitable)
-
     def test_should_match_string_which_matches_suitable_regexp_pattern(self):
         suitable = '^a*b*c*$'
         matcher = matchers.RegexpMatcher(suitable)
@@ -42,11 +32,6 @@ class RegexpMatcherTestCase(unittest.TestCase):
 
 
 class JsonMatcherTestCase(unittest.TestCase):
-    def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_string(self):
-        for unsuitable in [777, None, str]:
-            with self.assertRaises(errors.IncorrectSuitableError):
-                _ = matchers.JsonMatcher(unsuitable)
-
     def test_should_raise_incorrect_suitable_error_if_suitable_is_not_a_valid_json_string(self):
         suitable = 'This string is not suitable tho...'
         with self.assertRaises(errors.IncorrectSuitableError):
