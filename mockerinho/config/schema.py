@@ -23,12 +23,12 @@ config_file_schema = Schema({
             'value_matcher': And(str, validators.is_request_body_value_matcher_valid)
         })
     }),
-    'response': Optional(Schema({
+    Optional('response'): Schema({
         Optional('body'): str,
         Optional('headers'): [Schema({
             'name': And(str, validators.is_header_name_valid),
             'value': And(str, validators.is_header_value_valid)
         })],
         Optional('status'): And(int, validators.is_status_code_valid)
-    }))
+    })
 })
