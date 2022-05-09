@@ -15,7 +15,7 @@ def get_default_simulations_directory_path() -> str:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        prog='webapisimulator',
+        prog='mockerinho',
         description='Simulate Web APIs for development and testing purposes.',
     )
 
