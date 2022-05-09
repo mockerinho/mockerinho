@@ -7,11 +7,6 @@ from . import errors
 
 class ExactMatcher:
     def __init__(self, suitable: str) -> None:
-        if not isinstance(suitable, str):
-            raise errors.IncorrectSuitableError(
-                'The "suitable" must be a string.'
-            )
-
         self.__suitable_string = suitable
 
     def matches(self, captured: str) -> bool:
@@ -20,11 +15,6 @@ class ExactMatcher:
 
 class RegexpMatcher:
     def __init__(self, suitable: str) -> None:
-        if not isinstance(suitable, str):
-            raise errors.IncorrectSuitableError(
-                'The "suitable" must be a string.'
-            )
-
         try:
             suitable_regexp = re.compile(suitable)
         except re.error:
@@ -40,11 +30,6 @@ class RegexpMatcher:
 
 class JsonMatcher:
     def __init__(self, suitable: str) -> None:
-        if not isinstance(suitable, str):
-            raise errors.IncorrectSuitableError(
-                'The "suitable" must be a string.'
-            )
-
         suitable_json = JsonMatcher.__try_json_loads(suitable)
 
         if suitable_json is None:
