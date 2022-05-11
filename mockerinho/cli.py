@@ -32,10 +32,10 @@ def parse_args() -> argparse.Namespace:
 
 
 STARTING_SERVER_MESSAGE = '''
-Starting Web API Simulator server at http://{}:{}
+Starting Mockerinho server at http://{}:{}
 Quit the server with CONTROL-C.'''
 
-SERVER_HAS_STOPPED_MESSAGE = 'Web API Simulator server has stopped.'
+SERVER_HAS_STOPPED_MESSAGE = 'Mockerinho server has stopped.'
 
 
 def main() -> None:
