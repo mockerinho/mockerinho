@@ -57,3 +57,10 @@ class JsonMatcher:
             loaded = None
 
         return loaded
+
+
+matcher_classes = {
+    'exact': ExactMatcher,
+    'regexp': RegexpMatcher,
+    'json': JsonMatcher
+}
