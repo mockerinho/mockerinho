@@ -157,6 +157,10 @@ class Simulation:
             request_query_matchers,
             request_body_matcher,
         )
+
+        if response.get('headers') is not None:
+            response['headers'] = {item['name']: item['value'] for item in response['headers']}
+
         stub_response = StubResponse(**response)
 
         return cls(name, request_matcher, stub_response)
