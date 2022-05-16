@@ -1,7 +1,7 @@
 name: get_users
 
 request:
-  path: "/users"
+  path: /users
   method: GET
   headers:
   - name: Content-Type

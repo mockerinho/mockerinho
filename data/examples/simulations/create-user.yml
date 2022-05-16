@@ -1,7 +1,7 @@
 name: create_user
 
 request:
-  path: "/users"
+  path: /users
   method: POST
   headers:
   - name: Content-Type
