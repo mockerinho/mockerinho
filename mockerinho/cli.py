@@ -2,7 +2,9 @@ import argparse
 import os
 import sys
 
-from .config import ConfigFileParser
+import bjoern
+
+from .app import create_app
 from .errors import MockerinhoError
 
 
@@ -43,13 +45,7 @@ def main() -> None:
     host, port, directory = args.host, args.port, args.directory
 
     try:
-        configurations = []
-        for filename in os.listdir(directory):
-            absolute_path = os.path.join(directory, filename)
-            if os.path.isfile(absolute_path):
-                parsed_config = ConfigFileParser.parse(absolute_path)
-                configurations.append(parsed_config)
-
+        app = create_app(directory)
     except MockerinhoError as err:
         message = f'{err}\n'
         sys.stderr.write(message)
@@ -57,6 +53,6 @@ def main() -> None:
 
     try:
         print(STARTING_SERVER_MESSAGE.format(host, port))
-        # server call goes here...
+        bjoern.run(app, host, port)
     except KeyboardInterrupt:
         print(SERVER_HAS_STOPPED_MESSAGE)
