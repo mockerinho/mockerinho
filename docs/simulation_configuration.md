@@ -1,4 +1,8 @@
+# Simulation Configuration
 
+Each simulation configuration should be specified in separate file and has YAML or JSON format. For example:
+
+```yaml
 request:
   path: /users
   method: POST
@@ -16,3 +20,4 @@ response:
     - name: Content-Type
       value: application/json
   status: 201
+```
