@@ -51,22 +51,14 @@ class RequestMatcher:
                  method: str,
                  headers: 'list[RequestHeaderMatcher]',
                  query: 'list[RequestQueryParameterMatcher]',
-                 body: RequestBodyMatcher,
-    ) -> None:
+                 body: RequestBodyMatcher) -> None:
         self.path = path
         self.method = method
         self.headers = headers
         self.query = query
         self.body = body
 
-    def matches(
-            self,
-            path: str,
-            method: str,
-            headers: 'dict[str, str]',
-            query: 'dict[str, str]',
-            body: str,
-    ) -> bool:
+    def matches(self, path: str, method: str, headers: 'dict[str, str]', query: 'dict[str, str]', body: str) -> bool:
         has_path_match = self.path == path
         has_method_match = self.method == method
         has_headers_match = self.__matches_headers(headers)
@@ -165,12 +157,7 @@ class Simulation:
 
         return cls(name, request_matcher, stub_response)
 
-    def matches(self,
-                path: str,
-                method: str,
-                headers: 'dict[str, str]',
-                query: 'dict[str, str]',
-                body: str) -> bool:
+    def matches(self, path: str, method: str, headers: 'dict[str, str]', query: 'dict[str, str]', body: str) -> bool:
         has_match = self.request_matcher.matches(path, method, headers, query, body)
         return has_match
 
@@ -190,14 +177,11 @@ class WebApiSimulator:
 
         return cls(simulations)
 
-    def request(
-            self,
-            path: str,
-            method: str,
-            url_params: 'dict[str, str]',
-            headers: 'dict[str, str]',
-            body: str,
-    ) -> 'tuple[int, dict[str, str], str]':
+    def request(self,
+                path: str,
+                method: str,
+                url_params: 'dict[str, str]',
+                headers: 'dict[str, str]', body: str) -> 'tuple[int, dict[str, str], str]':
         stub_response = None
 
         for simulation in self._simulations:
