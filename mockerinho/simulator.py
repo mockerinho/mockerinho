@@ -112,15 +112,13 @@ class StubResponse:
 
 
 class Simulation:
-    def __init__(self, name: str, request_matcher: RequestMatcher, stub_response: StubResponse) -> None:
-        self.name = name
+    def __init__(self, request_matcher: RequestMatcher, stub_response: StubResponse) -> None:
         self.request_matcher = request_matcher
         self.stub_response = stub_response
 
     @classmethod
     def from_config(cls, path: str) -> 'Simulation':
         parsed_config = ConfigFileParser.parse(path)
-        name = parsed_config['name']
         request = parsed_config['request']
         response = parsed_config['response']
 
@@ -155,7 +153,7 @@ class Simulation:
 
         stub_response = StubResponse(**response)
 
-        return cls(name, request_matcher, stub_response)
+        return cls(request_matcher, stub_response)
 
     def matches(self, path: str, method: str, headers: 'dict[str, str]', query: 'dict[str, str]', body: str) -> bool:
         has_match = self.request_matcher.matches(path, method, headers, query, body)
