@@ -1,4 +1,3 @@
-name: create_user
 
 request:
   path: /users

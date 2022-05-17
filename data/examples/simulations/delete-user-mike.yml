@@ -1,0 +1,11 @@
+
+request:
+  path: /users/mike
+  method: DELETE
+
+response:
+  status: 200
+  body: '{"message": "deleted!"}'
+  headers:
+    - name: Content-Type
+      value: application/json
