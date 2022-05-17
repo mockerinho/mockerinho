@@ -4,7 +4,6 @@ from . import validators
 
 
 config_file_schema = Schema({
-    'name': str,
     'request': Schema({
         'path': And(str, validators.is_request_path_valid),
         'method': And(str, validators.is_request_method_valid),
