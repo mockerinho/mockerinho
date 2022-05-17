@@ -110,7 +110,7 @@ class StubResponse:
                '<html>' \
                '<body>' \
                '<h1>Default simulation</h1>' \
-               '<p>You are seeing this page because we could not find a suitable simulation.</p>' \
+               '<p>You are seeing this page because simulator could not find a suitable simulation.</p>' \
                '</body>' \
                '</html>' \
                '\n'
