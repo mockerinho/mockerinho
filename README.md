@@ -1,7 +1,7 @@
 # Mockerinho
 
-[![Build](https://github.com/callmecoolmanx/mockerinho/actions/workflows/build.yml/badge.svg)](https://github.com/callmecoolmanx/mockerinho/actions/workflows/build.yml)
-[![GitLicense](https://gitlicense.com/badge/callmecoolmanx/mockerinho)](https://gitlicense.com/license/callmecoolmanx/mockerinho)
+[![Build](https://github.com/mockerinho/mockerinho/actions/workflows/build.yml/badge.svg)](https://github.com/mockerinho/mockerinho/actions/workflows/build.yml)
+[![GitLicense](https://gitlicense.com/badge/mockerinho/mockerinho)](https://gitlicense.com/license/mockerinho/mockerinho)
 
 ![Mockerinho banner](docs/images/banner.jpeg)
 
