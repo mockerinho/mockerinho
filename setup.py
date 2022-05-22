@@ -24,7 +24,7 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     version=__version__,
-    url='https://github.com/callmecoolmanx/mockerinho',
+    url='https://github.com/mockerinho/mockerinho',
     author='Mikhail Eremeev',
     author_email='meremeev@sfedu.ru',
     license='MIT',
