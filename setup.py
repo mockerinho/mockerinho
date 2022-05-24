@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""
-* Install with pip (recommended):
-    pip3 install .
-* Install with setuptools:
-    python3 setup.py install
-"""
 from setuptools import setup, find_packages
 
 from mockerinho import __version__
@@ -32,4 +26,8 @@ setup(
     packages=find_packages(exclude=('tests',)),
     python_requires='>=3.7,<=3.10',
     install_requires=get_install_requires('requirements.txt'),
+    project_urls={
+        'Issues': 'https://github.com/mockerinho/mockerinho/issues',
+        'Sources': 'https://github.com/mockerinho/mockerinho',
+    },
 )
