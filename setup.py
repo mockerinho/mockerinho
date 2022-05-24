@@ -4,14 +4,6 @@ from setuptools import setup, find_packages
 from mockerinho import __version__
 
 
-def get_install_requires(requirements_filename: str) -> 'list[str]':
-    install_requires = []
-    with open(requirements_filename) as f:
-        for requirement in f.readlines():
-            install_requires.append(requirement)
-    return install_requires
-
-
 setup(
     name='mockerinho',
     description='Lightweight tool designed to simulate web API endpoints.',
@@ -25,7 +17,12 @@ setup(
     platforms=['any'],
     packages=find_packages(exclude=('tests',)),
     python_requires='>=3.7,<=3.10',
-    install_requires=get_install_requires('requirements.txt'),
+    install_requires=[
+        'bjoern==3.2.1',
+        'PyYAML==6.0',
+        'schema==0.7.5',
+        'Werkzeug==2.1.2'
+    ],
     project_urls={
         'Issues': 'https://github.com/mockerinho/mockerinho/issues',
         'Sources': 'https://github.com/mockerinho/mockerinho',
