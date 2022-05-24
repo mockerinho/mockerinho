@@ -28,6 +28,6 @@ setup(
         'Sources': 'https://github.com/mockerinho/mockerinho',
     },
     entry_points={
-        'console_scripts': ['mockerinho=mockerinho.cli.main:main'],
+        'console_scripts': ['mockerinho=mockerinho.cli:main'],
     },
 )
