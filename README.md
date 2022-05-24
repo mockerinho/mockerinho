@@ -9,14 +9,10 @@ A tool designed to simulate HTTP-based APIs for development and testing purposes
 
 ## Installation
 
-You can install this package using pip (recommended)
-```
-pip3 install .
-```
+You can install this package using pip
 
-or setuptools
 ```
-python3 setup.py install
+pip install mockerinho
 ```
 
 ## Usage
