@@ -22,7 +22,7 @@ setup(
     author='Mikhail Eremeev',
     author_email='meremeev@sfedu.ru',
     license='MIT',
-    platforms=('any',),
+    platforms=['any'],
     packages=find_packages(exclude=('tests',)),
     python_requires='>=3.7,<=3.10',
     install_requires=get_install_requires('requirements.txt'),
