@@ -1,0 +1,3 @@
+
+commit_template: |
+  style: apply ${restyler.name} codestyle
