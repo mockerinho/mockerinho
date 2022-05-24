@@ -3,7 +3,7 @@
 [![Build](https://github.com/mockerinho/mockerinho/actions/workflows/build.yml/badge.svg)](https://github.com/mockerinho/mockerinho/actions/workflows/build.yml)
 [![GitLicense](https://gitlicense.com/badge/mockerinho/mockerinho)](https://gitlicense.com/license/mockerinho/mockerinho)
 
-![Mockerinho banner](docs/images/banner.jpeg)
+![Mockerinho banner](https://github.com/mockerinho/mockerinho/raw/main/docs/images/banner.jpeg)
 
 A tool designed to simulate HTTP-based APIs for development and testing purposes.
 
