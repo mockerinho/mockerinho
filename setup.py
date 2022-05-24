@@ -27,4 +27,7 @@ setup(
         'Issues': 'https://github.com/mockerinho/mockerinho/issues',
         'Sources': 'https://github.com/mockerinho/mockerinho',
     },
+    entry_points={
+        'console_scripts': ['mockerinho=mockerinho.cli.main:main'],
+    },
 )
