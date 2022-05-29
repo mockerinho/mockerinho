@@ -12,7 +12,7 @@ request:
     value_matcher: exact
 
 response:
-  body: '{ "id": 1, "name": "Alex" }\n'
+  body: '{ "id": 1, "name": "Alex" }'
   headers:
     - name: Content-Type
       value: application/json
