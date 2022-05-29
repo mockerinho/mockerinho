@@ -16,4 +16,4 @@ response:
   headers:
     - name: Content-Type
       value: application/json
-  status: 201
+  status: 200
